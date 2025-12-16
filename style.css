@@ -1,0 +1,63 @@
+.caculator{
+    width: 280px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 20px auto;
+}
+li{
+    list-style-type: none;
+}
+.output{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.result{
+    width: 100%;
+    height: 20px;
+    padding: 0 2px;
+}
+.pointer{
+    height: 20px;
+    width: 2px;
+    background-color: black;
+}
+
+.otherFeatures{
+    height: 20px;
+    display: flex;
+}
+.otherFeatures div:hover{
+    cursor: pointer;
+}
+.backspace{
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.input{
+    height: 280px;
+    width: 100%;
+}
+.input ul{
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    outline: 1px solid black;
+    grid-template-columns: repeat(4, 1fr);
+}
+.input ul li{
+    background-color: yellowgreen;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: .2px solid black;
+}
+
