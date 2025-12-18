@@ -1,7 +1,3 @@
-// what to do
-// not to add any operand after each other or when it's empty
-
-
 // pointer affect
 const pointer = document.querySelector('.pointer')
 setInterval(function(){
@@ -27,16 +23,14 @@ let arrayOfInputs = []
 const inputs = document.querySelectorAll('.numbers-operans')
 inputs.forEach(function(input){
     input.addEventListener('click', function(){
-        arrayOfInputs.push(input.innerHTML);
-        finalResult()
-        togcolor()
-        // if (/[+/\-*]/.test(input.innerHTML)){
-        //     if (!arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*]/)){
-        //         arrayOfInputs.push(input.innerHTML);
-        //         finalResult()
-        //         togcolor()
-        //     }
-        // }
+        if (/[+/\-*%]/.test(input.innerHTML) && arrayOfInputs.length > 0 && arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*%]/) 
+        || /[+/\-*%]/.test(input.innerHTML) && arrayOfInputs.length === 0){
+            return;
+        }else{
+            arrayOfInputs.push(input.innerHTML);
+            finalResult()
+            togcolor()
+        }
     })
 })
 
@@ -75,18 +69,18 @@ function togcolor(){
 // the brackets
 const brackets = document.getElementById('brackets')
 brackets.addEventListener('click', function(){
-    if (!arrayOfInputs.includes('(') & !arrayOfInputs.includes(')')){
+    if (!arrayOfInputs.includes('(') && !arrayOfInputs.includes(')')){
         arrayOfInputs.push('(')
-        finalResult()
     }else{
-        const indexOfBracket = arrayOfInputs.indexOf('(')
-        if (arrayOfInputs.at(indexOfBracket+1)){
+        let indexOfBracket = arrayOfInputs.indexOf('(')
+        let last = arrayOfInputs.at(indexOfBracket+1)
+        let opened = arrayOfInputs.filter((ele) => ele === '(').length;
+        let closed = arrayOfInputs.filter((ele) => ele === ')').length;
+        if (opened > closed){
             arrayOfInputs.push(')')
-            finalResult()
         }else{
             arrayOfInputs.push('(')
-            finalResult()
         }
     }
+    finalResult()
 })
-
