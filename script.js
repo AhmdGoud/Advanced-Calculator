@@ -14,12 +14,10 @@ function finalResult(){
 }
 
 
-// immediat result
-let immediatresult = '';
-
-
 // accessing numbers and operands
 let arrayOfInputs = []
+let atleastOperand = false;
+const immediatresult = document.querySelector('.immediatresult');
 const inputs = document.querySelectorAll('.numbers-operans')
 inputs.forEach(function(input){
     input.addEventListener('click', function(){
@@ -31,8 +29,17 @@ inputs.forEach(function(input){
             finalResult()
             togcolor()
         }
+        // immediat result
+        let lastOperand = arrayOfInputs.at(arrayOfInputs.length-1);
+        if (/[+/\-*%]/.test(input.innerHTML)){
+            atleastOperand = true;
+        }
+        if (atleastOperand && !/[+/\-*%]/.test(lastOperand)){
+            immediatresult.innerHTML = eval(result.innerHTML);
+        }
     })
 })
+
 
 // clear and equal
 const clear = document.getElementById('clear')
@@ -40,6 +47,7 @@ clear.addEventListener('click', function(){
     arrayOfInputs = []
     result.innerHTML = ''
     backspace.classList.remove('togcolor')
+    immediatresult.innerHTML = ''
 })
 
 const equal = document.getElementById('equal')
@@ -47,6 +55,7 @@ equal.addEventListener('click', function(){
     if (!arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*]/)){
         result.innerHTML = eval(result.innerHTML)
         arrayOfInputs = []
+        immediatresult.innerHTML = ''
     }
 })
 
@@ -56,6 +65,15 @@ backspace.addEventListener('click', function(){
     arrayOfInputs.pop()
     finalResult()
     togcolor()
+    inputs.forEach(function(input){
+        let lastOperand = arrayOfInputs.at(arrayOfInputs.length-1);
+        if (input.innerHTML !== undefined && /[+/\-*%]/.test(input.innerHTML)){
+            atleastOperand = true;
+        }
+        if (atleastOperand && arrayOfInputs.length > 0 && !/[+/\-*%]/.test(lastOperand)){
+            immediatresult.innerHTML = eval(result.innerHTML);
+        }
+    })
 })
 
 function togcolor(){
