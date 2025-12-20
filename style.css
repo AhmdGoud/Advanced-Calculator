@@ -54,6 +54,8 @@ li{
     height: 280px;
     width: 100%;
     background-color: black;
+    position: relative;
+    overflow: hidden;
 }
 .input ul{
     padding-left: 0;
@@ -75,5 +77,25 @@ li{
     cursor: pointer;
 }
 .togcolor{
-    color: red;
+    color: rgb(123, 24, 223);
+}
+.history{
+    width: 210px;
+    height: 280px;
+    background-color: rebeccapurple;
+    position: absolute;
+    top: 1px;
+    left: -210px;
+    transition: .3s;
+    
+}
+.history .theoperation{
+    padding: 5px;
+    color: wheat;
+    font-weight: 500;
+    background-color: blueviolet;
+    border-bottom: .5px solid rgb(29, 1, 56);
+}
+.show-histroy{
+    left: 0;
 }
