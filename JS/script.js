@@ -4,7 +4,7 @@ setInterval(function(){
     pointer.classList.toggle('pointerAffect')
 }, 500)
 
-// the result function
+// the final result function
 const result = document.querySelector('.result')
 function finalResult(){
     result.innerHTML = ''
@@ -21,8 +21,9 @@ const immediatresult = document.querySelector('.immediatresult');
 const inputs = document.querySelectorAll('.numbers-operans')
 inputs.forEach(function(input){
     input.addEventListener('click', function(){
-
-        if (/[+/\-*%]/.test(input.innerHTML) && arrayOfInputs.length > 0 && arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*%]/) 
+        // checking if first or last input is an operator then adding operands to the result section
+        const isLastInputOperand = /[+/\-*%]/.test(arrayOfInputs.at(arrayOfInputs.length-1));
+        if (/[+/\-*%]/.test(input.innerHTML) && arrayOfInputs.length > 0 && isLastInputOperand
         || /[+/\-*%]/.test(input.innerHTML) && arrayOfInputs.length === 0){
             return;
         }else{
@@ -31,7 +32,7 @@ inputs.forEach(function(input){
             togcolor()
         }
 
-        // immediat result
+        // the immediate  result
         let lastOperand = arrayOfInputs.at(arrayOfInputs.length-1);
         if (/[+/\-*%]/.test(input.innerHTML)){
             atleastOperand = true;
@@ -43,7 +44,7 @@ inputs.forEach(function(input){
 })
 
 
-// clear and equal
+// clear result section
 const clear = document.getElementById('clear')
 clear.addEventListener('click', function(){
     arrayOfInputs = []
@@ -52,7 +53,7 @@ clear.addEventListener('click', function(){
     immediatresult.innerHTML = ''
 })
 
-
+// equal feature
 const equal = document.getElementById('equal')
 equal.addEventListener('click', function(){
     if (arrayOfInputs.length > '0' && !arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*]/)){
@@ -78,19 +79,21 @@ function operationsForHistory(){
     }else{
         histroyOperations.push(singleOperation);
     }
+
     // storing at loacal storage
     window.localStorage.setItem('operations', JSON.stringify(histroyOperations))
     const operations = window.localStorage.getItem("operations")
     const parsOperations = JSON.parse(operations)
     history.innerHTML = ''
 
+    // iterate over the array of operations and append it to the page
     for (ele of parsOperations){
-        // declaring variables
+        // creating elements
         const theOperation = document.createElement('div')
         theOperation.className = 'theoperation'
         const theExpresion = document.createElement('div')
         const theResultHistroy = document.createElement('div')
-        // assigning values
+        // assigning values and append
         theExpresion.innerHTML = ele.Expresion;
         theResultHistroy.innerHTML = ele.theResult
         theOperation.append(theExpresion, theResultHistroy)
@@ -107,7 +110,7 @@ historyBtn.addEventListener('click', function(){
     historyBtn.innerHTML === 'History' ? historyBtn.innerHTML = 'Keypad' : historyBtn.innerHTML = 'History'
 })
 
-// clear history
+// clear history from screen and local storage
 const clearHistory = document.querySelector('.clearbtn')
 clearHistory.addEventListener('click', clearing)
 function clearing(){
@@ -115,7 +118,7 @@ function clearing(){
     history.innerHTML = '';
 }
 
-// the backspace and togcolor function
+// the backspace removing method
 const backspace = document.querySelector('.backspace')
 backspace.addEventListener('click', function(){
     arrayOfInputs.pop()
@@ -132,6 +135,7 @@ backspace.addEventListener('click', function(){
     })
 })
 
+// change backspace color when result in empty
 function togcolor(){
     if (arrayOfInputs.length >= 1){
         backspace.classList.add('togcolor')
@@ -140,7 +144,7 @@ function togcolor(){
     }
 }
 
-// the brackets
+// the parentheses method (still have some logic)
 const brackets = document.getElementById('brackets')
 brackets.addEventListener('click', function(){
     if (!arrayOfInputs.includes('(') && !arrayOfInputs.includes(')')){
