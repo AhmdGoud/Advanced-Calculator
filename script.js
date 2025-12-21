@@ -55,7 +55,7 @@ clear.addEventListener('click', function(){
 
 const equal = document.getElementById('equal')
 equal.addEventListener('click', function(){
-    if (!arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*]/)){
+    if (arrayOfInputs.length > '0' && !arrayOfInputs.at(arrayOfInputs.length-1).match(/[+/\-*]/)){
         operationsForHistory()
         result.innerHTML = eval(result.innerHTML)
         arrayOfInputs = []
@@ -67,45 +67,53 @@ equal.addEventListener('click', function(){
 const histroyOperations = [];
 const history = document.querySelector('.history')
 function operationsForHistory(){
-
+    // single operation in history
     const singleOperation = {
         Expresion: result.innerHTML,
         theResult: eval(result.innerHTML)
     }
-    if (histroyOperations.length > 2){
+    if (histroyOperations.length > 9){
         histroyOperations.shift()
         histroyOperations.push(singleOperation);
     }else{
         histroyOperations.push(singleOperation);
     }
-
+    // storing at loacal storage
     window.localStorage.setItem('operations', JSON.stringify(histroyOperations))
     const operations = window.localStorage.getItem("operations")
     const parsOperations = JSON.parse(operations)
     history.innerHTML = ''
 
     for (ele of parsOperations){
+        // declaring variables
         const theOperation = document.createElement('div')
         theOperation.className = 'theoperation'
         const theExpresion = document.createElement('div')
         const theResultHistroy = document.createElement('div')
+        // assigning values
         theExpresion.innerHTML = ele.Expresion;
         theResultHistroy.innerHTML = ele.theResult
         theOperation.append(theExpresion, theResultHistroy)
-        history.append(theOperation)
+        history.prepend(theOperation)
     }
 }
 
-// clear history
-function clearHistory(){
-    
-}
 
 // show history results
 const historyBtn = document.querySelector('.historybtn')
+const theHistory = document.querySelector('.history-section')
 historyBtn.addEventListener('click', function(){
-    history.classList.toggle('show-histroy')
+    theHistory.classList.toggle('show-histroy')
+    historyBtn.innerHTML === 'History' ? historyBtn.innerHTML = 'Keypad' : historyBtn.innerHTML = 'History'
 })
+
+// clear history
+const clearHistory = document.querySelector('.clearbtn')
+clearHistory.addEventListener('click', clearing)
+function clearing(){
+    window.localStorage.removeItem('operations')
+    history.innerHTML = '';
+}
 
 // the backspace and togcolor function
 const backspace = document.querySelector('.backspace')

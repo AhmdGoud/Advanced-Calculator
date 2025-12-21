@@ -79,7 +79,7 @@ li{
 .togcolor{
     color: rgb(123, 24, 223);
 }
-.history{
+.history-section{
     width: 210px;
     height: 280px;
     background-color: rebeccapurple;
@@ -87,7 +87,8 @@ li{
     top: 1px;
     left: -210px;
     transition: .3s;
-    
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 .history .theoperation{
     padding: 5px;
@@ -98,4 +99,18 @@ li{
 }
 .show-histroy{
     left: 0;
+}
+.clearbtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(162, 82, 238);
+    color: white;
+    cursor: pointer;
+    padding: 3px 0;
+}
+.clearbtn:hover{
+    background-color: rgb(164, 79, 245);
 }
