@@ -11,7 +11,11 @@
 </head>
 <body style="background-color: #eee;">
     
-    <div class="caculator">
+    <div class="calculator">
+        <div class="uc-calculator">
+            <div class="hide-uc-clac"><ion-icon name="arrow-back-outline"></ion-icon></div>
+        </div>
+
         <div class="output">
             <div class="finalresult">
                 <div class="pointer"></div>
@@ -25,7 +29,24 @@
             <div class="UC">UC</div>
             <div class="backspace"><ion-icon name="backspace-outline"></ion-icon></div>
         </div>
-        <div class="uc-options"></div>
+
+        <div class="uc-options">
+            <div class="title">Unit Converter</div>
+            <div class="options">
+                <div class="temp unit" data-title="temperature">
+                    <ion-icon name="thermometer-outline"></ion-icon>
+                    <div class="tip" style="position: relative; top: -50px;"></div>
+                </div>
+                <div class="area unit" data-title="area">
+                    <ion-icon name="cube-outline"></ion-icon>
+                    <div class="tip" style="position: relative; top: -50px;"></div>
+                </div>
+                <div class="data unit" data-title="data">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    <div class="tip" style="position: relative; top: -50px;"></div>
+                </div>
+            </div>
+        </div>
 
         <div class="input">
             <div class="history-section">

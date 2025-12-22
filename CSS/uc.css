@@ -1,0 +1,50 @@
+/* the unit converter options */
+.uc-options{
+    width: 280px;
+    height: 210px;
+    background-color: rebeccapurple;
+    position: absolute;
+    bottom: -210px;
+    z-index: 11;
+    transition: .3s;
+    text-align: center;
+    color: white;
+}
+.show-uc-options{
+    bottom: 0;
+}
+.options{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.options ion-icon{
+    font-size: 22px;
+    cursor: pointer;
+}
+.title{
+    margin: 20px 0 40px 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+.tip{
+    display: none;
+}
+
+/* the unit converter calculator body*/
+.uc-calculator{
+    width: 280px;
+    height: 500px;
+    position: absolute;
+    right: -280px;
+    background-color: tomato;
+    transition: .3s;
+    z-index: 11;
+}
+.show-uc-calculator{
+    right: 0;
+}
+.hide-uc-clac ion-icon{
+    font-size: 22px;
+    margin: 12px;
+    cursor: pointer;
+}
