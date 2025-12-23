@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caculator & Converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="./CSS/uc.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -12,10 +13,85 @@
 <body style="background-color: #eee;">
     
     <div class="calculator">
-        <div class="uc-calculator">
-            <div class="hide-uc-clac"><ion-icon name="arrow-back-outline"></ion-icon></div>
-        </div>
 
+        <!-- the unit converter calc -->
+        <div class="uc-calculator">
+            <div class="hide-uc-clac">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                <span style="color: whitesmoke;">Unit Converter</span>
+            </div>
+
+            <!-- units input and output  -->
+            <!-- from unit  -->
+            <div class="from-unit">
+                <div class="unit-name">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Fahrenheit
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Fahrenheit</a></li>
+                            <li><a class="dropdown-item" href="#">Celsius</a></li>
+                            <li><a class="dropdown-item" href="#">kelvin</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit-num">
+                    <div class="number">1</div>
+                    <div class="pointer"></div>
+                    <div class="unit-sign">@</div>
+                </div>
+            </div>
+
+            <!-- to unit  -->
+            <div class="to-unit">
+                <div class="unit-name">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Fahrenheit
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Fahrenheit</a></li>
+                            <li><a class="dropdown-item" href="#">Celsius</a></li>
+                            <li><a class="dropdown-item" href="#">kelvin</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit-num">
+                    <div class="number">2</div>
+                    <div class="unit-sign">@</div>
+                </div>
+            </div>
+
+            <!-- unit logo plus backspace -->
+             <div class="unit-logo">
+                <div class="logo" style="color: whitesmoke;">logo</div>
+                <div class="uc-backspace"><ion-icon name="backspace-outline"></ion-icon></div>
+             </div>
+            
+            <!-- inputs for unit converter  -->
+            <ul class="uc-inputs">
+                <li class="numbers-operans">7</li>
+                <li class="numbers-operans">8</li>
+                <li class="numbers-operans">9</li>
+                <li class="numbers-operans">4</li>
+                <li class="numbers-operans">5</li>
+                <li class="numbers-operans">6</li>
+                <li id="up"><ion-icon name="arrow-up-outline"></ion-icon></li>
+                <li class="numbers-operans">1</li>
+                <li class="numbers-operans">2</li>
+                <li class="numbers-operans">3</li>
+                <li id="down"><ion-icon name="arrow-down-outline"></ion-icon></li>
+                <li id="clear" style="color: red;">C</li>
+                <li class="numbers-operans">0</li>
+                <li class="numbers-operans">.</li>
+            </ul>
+
+        </div>
+        <!-- end of unit converter calc -->
+        <!-- -------------------------- -->
+
+        <!-- output for calculator -->
         <div class="output">
             <div class="finalresult">
                 <div class="pointer"></div>
@@ -24,12 +100,14 @@
             <div class="immediatresult"></div>
         </div>
 
+        <!-- backspace and history btn  -->
         <div class="otherFeatures">
             <div class="historybtn" style="margin: 0 10px;">History</div>
             <div class="UC">UC</div>
             <div class="backspace"><ion-icon name="backspace-outline"></ion-icon></div>
         </div>
 
+        <!-- unit-converter otptions  -->
         <div class="uc-options">
             <div class="title">Unit Converter</div>
             <div class="options">
@@ -48,11 +126,13 @@
             </div>
         </div>
 
+        <!-- histroy section and clear btn  -->
         <div class="input">
             <div class="history-section">
                 <div class="history"></div>
                 <div class="clearbtn">Clear History</div>
             </div>
+            <!-- operands and operatros for calc  -->
             <ul>
                 <li id="clear" style="color: red;">C</li>
                 <li id="brackets">( )</li>
@@ -80,5 +160,6 @@
 
     <script src="./JS/script.js"></script>
     <script src="./JS/uc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -43,17 +43,105 @@
 .show-uc-calculator{
     right: 0;
 }
+.hide-uc-clac{
+    background-color: rgb(255, 117, 93);
+    display: flex;
+    align-items: center;
+}
 .hide-uc-clac ion-icon{
     font-size: 22px;
-    margin: 12px;
+    margin: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+/* from unit to unit, input and output  */
+.from-unit, .to-unit{
+    width: 100%;
+    background-color: tomato;
+    height: 100px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.from-unit{
+    border-bottom: .5px solid wheat;
+}
+.unit-num{
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.unit-sign{
+    margin-left: 8px;
+}
+.unit-num .pointer{
+    width: 1px;
+    height: 20px;
+    background-color: white;
+}
+.dropdown .btn{
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+}
+
+/* unit logo and backspace  */
+.unit-logo{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid wheat;
+    background-color: rgb(255, 117, 93);
+}
+.uc-backspace{
+    font-size: 18px;
+    color: white;
     cursor: pointer;
 }
 
+/* inputs for unit converter */
+.uc-inputs{
+    display: grid;
+    grid-template-areas: 'num num num up'
+                         'num num num up'
+                         'num num num down'
+                         'num num num down';
+    height: 217px;
+    background-color: rgb(255, 82, 51);
+    margin: 0;
+    padding: 0;
+}
+.uc-inputs li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#up{
+    grid-area: up;
+    border-left: .5px solid wheat;
+    border-bottom: .5px solid wheat;
+}
+#down{
+    grid-area: down;
+    border-left: .5px solid wheat;
+}
+#up ion-icon, #down ion-icon{
+    color: skyblue;
+    font-size: 18px;
+}
+
+/* media queries */
 @media (max-width:767px){
     body{
         height: 100vh;
-    }
-    .calculator{
-        margin-top: 100px;
+        padding-top: 150px;
     }
 }
