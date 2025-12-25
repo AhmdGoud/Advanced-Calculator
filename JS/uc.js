@@ -1,8 +1,14 @@
-// show the Unit Converter section
+// show the Unit Converter section and check if history tap is open
+import {historyIsOpened} from './script.js'
+export let uc_optionsIsOpened = false;
+
 const uc = document.querySelector('.UC')
 const uc_options = document.querySelector('.uc-options')
 uc.addEventListener('click', function(){
-    uc_options.classList.toggle('show-uc-options')
+    if (!historyIsOpened){
+        uc_options.classList.toggle('show-uc-options')
+        uc_optionsIsOpened ? uc_optionsIsOpened = false : uc_optionsIsOpened = true;
+    }
 })
 
 // show name of the unit-converter when hover

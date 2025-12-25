@@ -8,7 +8,7 @@ setInterval(function(){
 const result = document.querySelector('.result')
 function finalResult(){
     result.innerHTML = ''
-    for (ele of arrayOfInputs){
+    for (let ele of arrayOfInputs){
         result.innerHTML += ele
     }
 }
@@ -64,6 +64,8 @@ equal.addEventListener('click', function(){
     }
 })
 
+
+
 // history operations
 const histroyOperations = [];
 const history = document.querySelector('.history')
@@ -87,7 +89,7 @@ function operationsForHistory(){
     history.innerHTML = ''
 
     // iterate over the array of operations and append it to the page
-    for (ele of parsOperations){
+    for (let ele of parsOperations){
         // creating elements
         const theOperation = document.createElement('div')
         theOperation.className = 'theoperation'
@@ -102,12 +104,19 @@ function operationsForHistory(){
 }
 
 
-// show history results
+
+// show history results and check if UC tap is open
+export let historyIsOpened = false;
+import {uc_optionsIsOpened} from './uc.js'
+
 const historyBtn = document.querySelector('.historybtn')
 const theHistory = document.querySelector('.history-section')
 historyBtn.addEventListener('click', function(){
-    theHistory.classList.toggle('show-histroy')
-    historyBtn.innerHTML === 'History' ? historyBtn.innerHTML = 'Keypad' : historyBtn.innerHTML = 'History'
+    if (!uc_optionsIsOpened){
+        theHistory.classList.toggle('show-histroy')
+        historyBtn.innerHTML === 'History' ? historyBtn.innerHTML = 'Keypad' : historyBtn.innerHTML = 'History'
+        historyIsOpened ? historyIsOpened = false : historyIsOpened = true;
+    }
 })
 
 // clear history from screen and local storage
