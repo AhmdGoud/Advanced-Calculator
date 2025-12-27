@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="unit-num">
-                    <div class="number">1</div>
+                    <div class="input-unit"></div>
                     <div class="pointer"></div>
                     <div class="unit-sign">@</div>
                 </div>
@@ -58,14 +58,14 @@
                     </div>
                 </div>
                 <div class="unit-num">
-                    <div class="number">2</div>
+                    <div class="output-nuit"></div>
                     <div class="unit-sign">@</div>
                 </div>
             </div>
 
             <!-- unit logo plus backspace -->
              <div class="unit-logo">
-                <div class="logo" style="color: whitesmoke;">logo</div>
+                <div class="logo" style="color: whitesmoke;"></div>
                 <div class="uc-backspace"><ion-icon name="backspace-outline"></ion-icon></div>
              </div>
             
@@ -82,7 +82,7 @@
                 <li class="numbers-operans">2</li>
                 <li class="numbers-operans">3</li>
                 <li id="down"><ion-icon name="arrow-down-outline"></ion-icon></li>
-                <li id="clear" style="color: red;">C</li>
+                <li id="clearUC" style="color: red;">C</li>
                 <li class="numbers-operans">0</li>
                 <li class="numbers-operans">.</li>
             </ul>
@@ -111,16 +111,16 @@
         <div class="uc-options">
             <div class="title">Unit Converter</div>
             <div class="options">
-                <div class="temp unit" data-title="temperature">
-                    <ion-icon name="thermometer-outline"></ion-icon>
+                <div class="area unit" data-title="area">
+                    <span><ion-icon name="cube-outline"></ion-icon></span>
                     <div class="tip" style="position: relative; top: -50px;"></div>
                 </div>
-                <div class="area unit" data-title="area">
-                    <ion-icon name="cube-outline"></ion-icon>
+                <div class="temp unit" data-title="temperature">
+                    <span><ion-icon name="thermometer-outline"></ion-icon></span>
                     <div class="tip" style="position: relative; top: -50px;"></div>
                 </div>
                 <div class="data unit" data-title="data">
-                    <ion-icon name="document-text-outline"></ion-icon>
+                    <span><ion-icon name="document-text-outline"></ion-icon></span>
                     <div class="tip" style="position: relative; top: -50px;"></div>
                 </div>
             </div>

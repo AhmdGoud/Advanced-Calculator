@@ -18,7 +18,7 @@ function finalResult(){
 let arrayOfInputs = []
 let atleastOperand = false;
 const immediatresult = document.querySelector('.immediatresult');
-const inputs = document.querySelectorAll('.numbers-operans')
+const inputs = document.querySelectorAll('.input .numbers-operans')
 inputs.forEach(function(input){
     input.addEventListener('click', function(){
         // checking if first or last input is an operator then adding operands to the result section
