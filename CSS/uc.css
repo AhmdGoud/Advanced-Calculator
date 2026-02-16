@@ -1,147 +1,154 @@
 /* the unit converter options */
-.uc-options{
-    width: 280px;
-    height: 210px;
-    background-color: rebeccapurple;
-    position: absolute;
-    bottom: -210px;
-    z-index: 11;
-    transition: .3s;
-    text-align: center;
-    color: white;
+.uc-options {
+  width: 280px;
+  height: 224px;
+  background-color: rebeccapurple;
+  position: absolute;
+  bottom: -224px;
+  z-index: 11;
+  transition: 0.3s;
+  text-align: center;
+  color: white;
 }
-.show-uc-options{
-    bottom: 0;
+.show-uc-options {
+  bottom: 0;
 }
-.options{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-.options ion-icon{
-    font-size: 22px;
-    cursor: pointer;
+.options ion-icon {
+  font-size: 22px;
+  cursor: pointer;
 }
-.title{
-    margin: 20px 0 40px 0;
-    font-size: 22px;
-    font-weight: 500;
+.title {
+  margin: 20px 0 40px 0;
+  font-size: 22px;
+  font-weight: 500;
 }
-.tip{
-    display: none;
+.tip {
+  display: none;
 }
 
 /* the unit converter calculator body*/
-.uc-calculator{
-    width: 280px;
-    height: 500px;
-    position: absolute;
-    right: -280px;
-    background-color: tomato;
-    transition: .3s;
-    z-index: 11;
+.uc-calculator {
+  width: 280px;
+  height: 505px;
+  position: absolute;
+  right: -280px;
+  background-color: tomato;
+  transition: 0.3s;
+  z-index: 11;
 }
-.show-uc-calculator{
-    right: 0;
+.show-uc-calculator {
+  right: 0;
 }
-.hide-uc-clac{
-    background-color: rgb(255, 117, 93);
-    display: flex;
-    align-items: center;
+.hide-uc-clac {
+  background-color: rgb(255, 117, 93);
+  display: flex;
+  align-items: center;
 }
-.hide-uc-clac ion-icon{
-    font-size: 22px;
-    margin: 8px;
-    cursor: pointer;
-    color: white;
+.hide-uc-clac ion-icon {
+  font-size: 22px;
+  margin: 8px;
+  cursor: pointer;
+  color: white;
 }
 
 /* from unit to unit, input and output  */
-.from-unit, .to-unit{
-    width: 100%;
-    background-color: tomato;
-    height: 100px;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+.from-unit,
+.to-unit {
+  width: 100%;
+  background-color: rgb(255, 82, 51);
+  height: 100px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
-.from-unit{
-    border-bottom: .5px solid wheat;
+.from-unit {
+  border-bottom: 0.5px solid wheat;
 }
-.unit-num{
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    gap: 2px;
+.unit-num {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
-.unit-sign{
-    margin-left: 8px;
+.unit-sign {
+  margin-left: 8px;
 }
-.unit-num .pointer{
-    width: 1px;
-    height: 20px;
-    background-color: white;
+.unit-num .pointer {
+  width: 1px;
+  height: 20px;
+  background-color: white;
 }
-.dropdown .btn{
-    background-color: transparent;
-    border: none;
-    padding-left: 0;
+.dropdown .btn {
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
 }
 
 /* unit logo and backspace  */
-.unit-logo{
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    border-bottom: 1px solid wheat;
-    background-color: rgb(255, 117, 93);
+.unit-logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid wheat;
+  background-color: rgb(255, 117, 93);
 }
-.uc-backspace{
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
+.uc-backspace {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
 /* inputs for unit converter */
-.uc-inputs{
-    display: grid;
-    grid-template-areas: 'num num num up'
-                         'num num num up'
-                         'num num num down'
-                         'num num num down';
-    height: 217px;
-    background-color: rgb(255, 82, 51);
-    margin: 0;
-    padding: 0;
+.uc-inputs {
+  display: grid;
+  grid-template-areas:
+    "num num num up"
+    "num num num up"
+    "num num num down"
+    "num num num down";
+  height: 217px;
+  background-color: rgb(255, 82, 51);
+  margin: 0;
+  padding: 0;
 }
-.uc-inputs li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.uc-inputs li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-#up{
-    grid-area: up;
-    border-left: .5px solid wheat;
-    border-bottom: .5px solid wheat;
+#clearUC {
+  color: rgb(37, 37, 214);
+  font-weight: 500;
 }
-#down{
-    grid-area: down;
-    border-left: .5px solid wheat;
+#up {
+  grid-area: up;
+  border-left: 0.5px solid wheat;
+  border-bottom: 0.5px solid wheat;
 }
-#up ion-icon, #down ion-icon{
-    color: skyblue;
-    font-size: 18px;
+#down {
+  grid-area: down;
+  border-left: 0.5px solid wheat;
+}
+#up ion-icon,
+#down ion-icon {
+  color: skyblue;
+  font-size: 18px;
 }
 
 /* media queries */
-@media (max-width:767px){
-    body{
-        height: 100vh;
-        padding-top: 150px;
-    }
+@media (max-width: 767px) {
+  body {
+    height: 100vh;
+    padding-top: 150px;
+  }
 }

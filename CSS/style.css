@@ -1,135 +1,151 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.calculator{
-    width: 280px;
-    height: 500px;
-    border: 1px solid black;
-    margin: 20px auto;
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
+.calculator {
+  width: 280px;
+  /* height: 500px; */
+  border: 2px solid rgb(61, 61, 61);
+  border-radius: 10px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
 }
-li{
-    list-style-type: none;
+li {
+  list-style-type: none;
 }
 
 /* pointer and it's affect */
-.pointer{
-    height: 20px;
-    width: 2px;
-    background-color: black;
+.pointer {
+  height: 20px;
+  width: 2px;
+  background-color: black;
 }
-.pointerAffect{
-    visibility: hidden;
+.pointerAffect {
+  background-color: red;
 }
 
 /* output, final result and immesiat result */
-.output{
-    height: 200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.output {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.finalresult{
-    width: 100%;
-    height: 20px;
-    padding: 0 2px;
-    display: flex;
+.finalresult {
+  width: 100%;
+  height: 20px;
+  padding: 0 2px;
+  display: flex;
 }
-.immediatresult{
-    width: 100%;
-    height: 30px;
-    margin-top: 30px;
-    padding: 0 2px;
-    font-size: 28px;
+.immediatresult {
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+  padding: 0 2px;
+  font-size: 28px;
 }
 
 /* the backspace feature */
-.otherFeatures{
-    height: 20px;
-    display: flex;
+.otherFeatures {
+  height: 20px;
+  display: flex;
+  margin-bottom: 5px;
 }
-.otherFeatures div:hover{
-    cursor: pointer;
+.otherFeatures div:hover {
+  cursor: pointer;
 }
-.backspace{
-    margin-left: auto;
-    margin-right: 10px;
-    font-size: 18px;
+.backspace {
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: 20px;
 }
-.togcolor{
-    color: rgb(123, 24, 223);
+.togcolor {
+  color: rgb(47, 136, 238);
 }
 
 /* operands and operators */
-.input{
-    height: 280px;
-    width: 100%;
-    background-color: black;
-    position: relative;
-    overflow: hidden;
+.input {
+  height: 280px;
+  width: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
 }
-.input ul{
-    padding-left: 0;
-    margin: 0;
-    border-top: .5px solid black;
-    border-bottom: .5px solid black;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.input ul {
+  padding-left: 0;
+  margin: 0;
+  background-color: rgb(235, 226, 211);
+  /* border-top: .5px solid black;
+    border-bottom: .5px solid black; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
 }
-.input ul li{
-    background-color: yellowgreen;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.input ul li {
+  background-color: yellowgreen;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.input ul li:hover {
+  background-color: rgb(117, 168, 14);
 }
 
 /* history section */
-.history-section{
-    width: 210px;
-    height: 100%;
-    background-color: rebeccapurple;
-    position: absolute;
-    top: 1px;
-    left: -210px;
-    transition: .3s;
-    overflow-y: auto;
-    scrollbar-width: thin;
+.history-section {
+  width: 210px;
+  height: 100%;
+  background-color: rebeccapurple;
+  position: absolute;
+  top: 1px;
+  left: -210px;
+  transition: 0.3s;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
-.history{
-    min-height: 255px;
+.history {
+  min-height: 255px;
 }
-.history .theoperation{
-    padding: 5px;
-    color: wheat;
-    font-weight: 500;
-    background-color: blueviolet;
-    border-bottom: .5px solid rgb(29, 1, 56);
+.history .theoperation {
+  padding: 5px;
+  color: wheat;
+  font-weight: 500;
+  background-color: blueviolet;
+  border-bottom: 0.5px solid rgb(29, 1, 56);
 }
-.show-histroy{
-    left: 0;
+.show-histroy {
+  left: 0;
 }
-.clearbtn{
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid rgb(168, 82, 238);
-    background-color: blueviolet;
-    color: white;
-    cursor: pointer;
-    padding: 3px 0;
+.clearbtn {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgb(168, 82, 238);
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  padding: 3px 0;
 }
-.clearbtn:hover{
-    background-color: rgb(178, 104, 247);
+.clearbtn:hover {
+  background-color: rgb(178, 104, 247);
+}
+#equal {
+  background-color: rgb(47, 136, 238);
+  color: whitesmoke;
+  font-size: 18px;
+}
+#clear {
+  color: rgb(223, 8, 8);
+  font-weight: 500;
 }
